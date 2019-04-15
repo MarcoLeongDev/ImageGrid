@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <style>
+        img {
+            width: 60px;
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script>
+        /////////////// Customise values here ////////////////
+        // File name follows : fileName + index + extension //
+        //////////////////////////////////////////////////////
+
+        var path = "";
+        var fileName = "meme_cat";              // file name here
+        var extension = ".png"          // file extension here
+
+        var iteration = 1024;           // number of times to repeat
+        var shouldIncrement = false;     // should the number increased?
+
+        var shouldPadWithZero = false;   // fill in with zero, i.e. "42" vs "0042"
+        var numberOfDigits = 3;         // number of digits, i.e. "0001" -> 4  or   "01" -> 2
+
+        ////////////////////////////////////////////////////
+
+
+        for (let i = 0; i < iteration; i++) {
+            var numStr = "" + i;
+            var zeroNeeded = numberOfDigits - numStr.length;
+
+            // calcuate 
+            var indexStr = "";
+
+            if (shouldIncrement) {
+                if (shouldPadWithZero) {
+                    for (let i = 0; i < zeroNeeded; i++) {
+                        indexStr += "0";
+                    }
+                }
+                indexStr += i;
+            }
+
+            document.write('<img src="' + path + fileName + indexStr + extension + '">');
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
